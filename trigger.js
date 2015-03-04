@@ -13,9 +13,10 @@ function trigger (el, event) {
     var ev = document.createEvent('HTMLEvents');
     ev.initEvent(event, true, false);
     el.dispatchEvent(ev);
-  } else {
-    el.fireEvent('on'+event);
+    return;
   }
+  
+  el.fireEvent('on'+event);
 }
 
 module.exports = trigger;
